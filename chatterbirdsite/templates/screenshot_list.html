@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %} {{ run_info['slug'] }} - Screenshots by Date {% end %}
+
+{% block content %}
+
+
+<h1>Screenshots by Date</h1>
+
+<ul>
+    {% for date_str in date_listing %}
+    <li><a href="{{ reverse_url('run.screenshot.date_browse', run_info['slug'], date_str) }}">{{ date_str }}</a></li>
+    {% end %}
+</ul>
+
+
+{% end %}

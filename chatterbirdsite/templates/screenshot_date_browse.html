@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %} Screenshots on {{ date_str }} - {{ run_info['title'] }} {% end %}
+
+{% block content %}
+
+
+<h1>Screenshots on {{ date_str }}</h1>
+
+
+{% for filename in filenames %}
+    {% module Thumbnail(run_info['slug'], filename) %}
+{% end %}
+
+{% end %}

@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %} {{ run_info['title'] }} {% end %}
+
+{% block content %}
+
+
+<h1>{{ run_info['title'] }}</h1>
+
+<ul>
+    <li>Date started: {{ run_info['run_start'] }}</li>
+    <li>URL: <a href="{{ run_info['url'] }}">{{ run_info['url'] }}</a></li>
+</ul>
+
+<h2>Recent Screenshots</h2>
+
+{% for filename in recent_screenshots %}
+    {% module Thumbnail(run_info['slug'], filename) %}
+{% end %}
+
+<p><a href="{{ reverse_url('run.screenshot.list', run_info['slug']) }}">Browse by date</a></p>
+
+<p>Reload the page to see latest updates.</p>
+
+
+{% end %}

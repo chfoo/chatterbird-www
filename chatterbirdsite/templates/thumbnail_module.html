@@ -1,0 +1,7 @@
+<div class="thumbnailContainer">
+    <a href="{{ reverse_url('run.screenshot.image', '{}/screenshot/{}'.format(slug, filename)) }}">
+        <img src="{{ reverse_url('run.screenshot.image', '{}/screenshot/{}'.format(slug, filename.replace('.', '_thumb.'))) }}">
+        <br>
+        <span id="thumbnailDate">{{ thumbnail_date }}</span>
+    </a>
+</div>

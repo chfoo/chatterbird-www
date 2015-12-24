@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %} Home {% end %}
+
+{% block content %}
+
+
+<h1>Runs</h1>
+<ul>
+    {% for run_info in run_infos %}
+    <li>
+        <a href="{{ reverse_url('run', run_info['slug']) }}">{{ run_info['title'] }}</a>
+        {{ run_info['run_start'] }}
+    </li>
+    {% end %}
+
+</ul>
+
+{% end %}
