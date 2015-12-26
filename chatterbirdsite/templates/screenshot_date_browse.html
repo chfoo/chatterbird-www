@@ -7,9 +7,12 @@
 
 <h1>Screenshots on {{ date_str }}</h1>
 
+<p>Newest at top.</p>
 
 {% for filename in filenames %}
     {% module Thumbnail(run_info['slug'], filename) %}
 {% end %}
+
+<p><a href="{{ reverse_url('run.screenshot.list', run_info['slug']) }}">Browse by date</a></p>
 
 {% end %}

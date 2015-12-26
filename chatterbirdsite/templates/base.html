@@ -17,5 +17,13 @@
     <blockquote>Like Chatot? I <em>love</em> Chatot!</blockquote>
 </footer>
 
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script src="{{ static_url('jquery.timeago.js') }}"></script>
+<script>
+jQuery(document).ready(function() {
+    jQuery.timeago.settings.cutoff = 86400 * 1000;
+    jQuery("time.thumbnailDate").timeago();
+});
+</script>
 </body>
 </html>

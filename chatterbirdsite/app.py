@@ -77,7 +77,7 @@ class ScreenshotListHandler(BaseHandler):
 
         self.render(
             'screenshot_list.html',
-            date_listing=self.application.model.get_screenshot_date_listing(slug),
+            date_listing=reversed(self.application.model.get_screenshot_date_listing(slug)),
             run_info=self.application.model.RUN_MAP[slug]
         )
 
@@ -90,6 +90,6 @@ class ScreenshotDateBrowseHandler(BaseHandler):
         self.render(
             'screenshot_date_browse.html',
             date_str=date_str,
-            filenames=self.application.model.get_screenshot_filename_listing(slug, date_str),
+            filenames=reversed(self.application.model.get_screenshot_filename_listing(slug, date_str)),
             run_info=self.application.model.RUN_MAP[slug]
         )

@@ -2,6 +2,6 @@
     <a href="{{ reverse_url('run.screenshot.image', '{}/screenshot/{}'.format(slug, filename)) }}">
         <img src="{{ reverse_url('run.screenshot.image', '{}/screenshot/{}'.format(slug, filename.replace('.', '_thumb.'))) }}">
         <br>
-        <span id="thumbnailDate">{{ thumbnail_date }}</span>
+        <time class="thumbnailDate" datetime="{{ thumbnail_date.isoformat() }}Z">{{ thumbnail_date }}</time>
     </a>
 </div>
