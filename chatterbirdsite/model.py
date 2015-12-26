@@ -8,9 +8,15 @@ class AppModel(object):
         {
             'slug': 'aiss-psmd',
             'title': 'Twitch Plays Pokémon Super Mystery Dungeon (By Aissurtievos)',
-            'run_start': datetime.datetime(2015, 12, 26, 17, 00, tzinfo=datetime.timezone.utc),
+            'run_start': datetime.datetime(2015, 12, 26, 17, 0, tzinfo=datetime.timezone.utc),
             'url': 'http://www.twitch.tv/aissurtievos'
-        }
+        },
+        {
+            'slug': 'aiss-psmd-pre',
+            'title': 'Testing (Aissurtievos)',
+            'run_start': datetime.datetime(2015, 12, 24, 0, 0, tzinfo=datetime.timezone.utc),
+            'url': 'http://www.twitch.tv/aissurtievos'
+        },
     ]
 
     RUN_MAP = {}
