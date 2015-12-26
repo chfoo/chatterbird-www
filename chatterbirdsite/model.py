@@ -49,6 +49,6 @@ class AppModel(object):
                 image_filenames.append(filename)
 
                 if len(image_filenames) >= count:
-                    break
+                    return image_filenames
 
         return image_filenames
