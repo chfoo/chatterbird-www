@@ -6,6 +6,18 @@ import os
 class AppModel(object):
     RUNS = [
         {
+            'slug': 'aoc-2016-01-09',
+            'title': 'Twitch Flies A Plane, Twitch Plays Flash Games, <top-secret thing>',
+            'run_start': datetime.datetime(2016, 1, 10, 1, 0, tzinfo=datetime.timezone.utc),
+            'url': 'http://www.twitch.tv/AdventuresOfChat'
+        },
+        {
+            'slug': 'aiss-psmd-post',
+            'title': 'PSMD post game misc (Aissurtievos)',
+            'run_start': datetime.datetime(2016, 1, 10, 0, 0, tzinfo=datetime.timezone.utc),
+            'url': 'http://www.twitch.tv/aissurtievos'
+        },
+        {
             'slug': 'aiss-psmd',
             'title': 'Twitch Plays Pokémon Super Mystery Dungeon (By Aissurtievos)',
             'run_start': datetime.datetime(2015, 12, 26, 17, 0, tzinfo=datetime.timezone.utc),
