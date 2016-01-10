@@ -7,7 +7,7 @@ class AppModel(object):
     RUNS = [
         {
             'slug': 'aoc-2016-01-09',
-            'title': 'Twitch Flies A Plane, Twitch Plays Flash Games, <top-secret thing>',
+            'title': 'Twitch Flies A Plane, Twitch Plays Flash Games, <top-secret thing> (By AdventuresOfChat)',
             'run_start': datetime.datetime(2016, 1, 10, 1, 0, tzinfo=datetime.timezone.utc),
             'url': 'http://www.twitch.tv/AdventuresOfChat'
         },
