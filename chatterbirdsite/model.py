@@ -6,8 +6,14 @@ import os
 class AppModel(object):
     RUNS = [
         {
+            'slug': 'tpp-crystal-251',
+            'title': 'Twitch Plays Pokémon Anniversary Crystal 251 (By TwitchPlaysPokemon)',
+            'run_start': datetime.datetime(2016, 2, 14, 21, 0, tzinfo=datetime.timezone.utc),
+            'url': 'http://www.twitch.tv/twitchplayspokemon'
+        },
+        {
             'slug': 'aoc-2016-01-30',
-            'title': 'AoC #8: Twitch Plays Surgeon Sim, Twitch Does Your Homework, Twitch makes a promo for the next TPP run, other weird things...',
+            'title': 'AoC #8: Twitch Plays Surgeon Sim, Twitch Does Your Homework, Twitch makes a promo for the next TPP run, other weird things... (By AdventuresOfChat)',
             'run_start': datetime.datetime(2016, 1, 31, 1, 0, tzinfo=datetime.timezone.utc),
             'url': 'http://www.twitch.tv/AdventuresOfChat'
         },
