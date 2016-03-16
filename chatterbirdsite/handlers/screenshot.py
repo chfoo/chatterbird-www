@@ -1,3 +1,5 @@
+import os
+
 from tornado.web import HTTPError
 
 from chatterbirdsite.handlers.base import BaseHandler, BaseStaticHandler
