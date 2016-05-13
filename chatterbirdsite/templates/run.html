@@ -10,9 +10,17 @@
 <ul>
     <li>Date started: {{ run_info['run_start'] }}</li>
     <li>URL: <a href="{{ run_info['url'] }}">{{ run_info['url'] }}</a></li>
+
+    {% if 'download_link' in run_info %}
+    <li>Archive download: <a href="{{ run_info['download_link'] }}">{{ run_info['download_link'] }}</a></li>
+    {% end %}
 </ul>
 
 <h2>Recent Screenshots</h2>
+
+{% if not recent_screenshots and 'download_link' in run_info %}
+    <strong>Screenshots are not available. Please use the archive download link in the meantime.</strong>
+{% end %}
 
 {% for filename in recent_screenshots %}
     {% module Thumbnail(run_info['slug'], filename) %}

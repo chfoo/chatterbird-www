@@ -17,7 +17,17 @@ class RunHandler(BaseHandler):
         )
 
 
-class ScreenshotImageHandler(BaseStaticHandler):
+class ScreenshotUnavailableMixin:
+    def render_unavailable(self, slug):
+        self.set_status(404)
+        self.render(
+            'images_not_available.html',
+            run_info=self.application.model.RUN_MAP[slug]
+        )
+        return
+
+
+class ScreenshotImageHandler(BaseStaticHandler, ScreenshotUnavailableMixin):
     @classmethod
     def get_absolute_path(cls, root, path):
         slug, dummy, filename = path.split('/', 3)
@@ -25,11 +35,24 @@ class ScreenshotImageHandler(BaseStaticHandler):
         path = os.path.join(root, slug, date_str, filename)
         return path
 
+    def write_error(self, status_code, **kwargs):
+        dummy, slug, dummy2 = self.request.path.strip('/').split('/', 2)
 
-class ScreenshotListHandler(BaseHandler):
+        if status_code == 404 and self.application.model.is_screenshots_unavailable(slug):
+            self.render_unavailable(slug)
+            return
+        else:
+            super().write_error(status_code, **kwargs)
+
+
+class ScreenshotListHandler(BaseHandler, ScreenshotUnavailableMixin):
     def get(self, slug):
         if slug not in self.application.model.RUN_MAP:
             raise HTTPError(404)
+
+        if self.application.model.is_screenshots_unavailable(slug):
+            self.render_unavailable(slug)
+            return
 
         self.render(
             'screenshot_list.html',
@@ -38,10 +61,14 @@ class ScreenshotListHandler(BaseHandler):
         )
 
 
-class ScreenshotDateBrowseHandler(BaseHandler):
+class ScreenshotDateBrowseHandler(BaseHandler, ScreenshotUnavailableMixin):
     def get(self, slug, date_str):
         if slug not in self.application.model.RUN_MAP:
             raise HTTPError(404)
+
+        if self.application.model.is_screenshots_unavailable(slug):
+            self.render_unavailable(slug)
+            return
 
         self.render(
             'screenshot_date_browse.html',

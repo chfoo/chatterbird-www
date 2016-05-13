@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block title %} {{ run_info['slug'] }} - Screenshots unavailable {% end %}
+
+{% block content %}
+
+<p><big><strong>Screenshots unavailable for viewing</strong></big></p>
+<p>Please visit <a href="{{ run_info['download_link'] }}">{{ run_info['download_link'] }}</a> to download an archive of them for viewing.</p>
+
+{% end %}

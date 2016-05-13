@@ -94,3 +94,11 @@ class AppModel(object):
                     return image_filenames
 
         return image_filenames
+
+    def is_screenshots_unavailable(self, slug):
+        if slug not in self.RUN_MAP:
+            return False
+
+        recent = self.get_recent_screenshots(slug, count=1)
+
+        return not recent and self.RUN_MAP[slug].get('download_link')
