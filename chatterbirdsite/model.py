@@ -21,7 +21,8 @@ class AppModel(object):
             'slug': 'tpp-telefang',
             'title': 'Twitch Plays "Pokémon Diamond" Telefang (By TwitchPlaysPokemon)',
             'run_start': datetime.datetime(2016, 3, 16, 21, 0, tzinfo=datetime.timezone.utc),
-            'url': 'http://www.twitch.tv/twitchplayspokemon'
+            'url': 'http://www.twitch.tv/twitchplayspokemon',
+            'download_link': 'https://archive.org/details/tpp-telefang-screenshots',
         },
         {
             'slug': 'tpp-crystal-251',
