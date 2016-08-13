@@ -15,7 +15,8 @@ class AppModel(object):
             'slug': 'tpp-brown',
             'title': 'Twitch Plays Pokemon Brown (By TwitchPlaysPokemon)',
             'run_start': datetime.datetime(2016, 6, 19, 21, 0, tzinfo=datetime.timezone.utc),
-            'url': 'http://www.twitch.tv/twitchplayspokemon'
+            'url': 'http://www.twitch.tv/twitchplayspokemon',
+            'download_link': 'https://archive.org/details/tpp-brown-screenshots'
         },
         {
             'slug': 'aiss-dual-test',
