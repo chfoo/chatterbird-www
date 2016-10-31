@@ -21,7 +21,8 @@ class AppModel(object):
             'slug': 'tpp-post-rand-plat',
             'title': 'TwitchPlaysPokemon Post Randomized Platinum',
             'run_start': datetime.datetime(2016, 7, 31, 21, 0, tzinfo=datetime.timezone.utc),
-            'url': 'http://www.twitch.tv/twitchplayspokemon'
+            'url': 'http://www.twitch.tv/twitchplayspokemon',
+            'download_link': 'https://archive.org/details/tpp-post-rand-plat-screenshots',
         },
         {
             'slug': 'tpp-rand-plat',
