@@ -16,7 +16,7 @@ class AppModel(object):
             'title': 'TwitchPlaysPokemon Prism',
             'run_start': datetime.datetime(2016, 10, 9, 21, 0, tzinfo=datetime.timezone.utc),
             'url': 'http://www.twitch.tv/twitchplayspokemon',
-            'download_url': 'https://archive.org/download/tpp-prism-screenshots'
+            'download_link': 'https://archive.org/download/tpp-prism-screenshots'
         },
         {
             'slug': 'tpp-post-rand-plat',
