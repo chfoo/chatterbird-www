@@ -8,7 +8,7 @@ class AppModel(object):
         {
             'slug': 'tpp-sun',
             'title': 'TwitchPlaysPokemon Sun',
-            'run_start': datetime.datetime(2016, 11, 18, 22, 0, tzinfo=datetime.timezone.utc),
+            'run_start': datetime.datetime(2016, 11, 19, 22, 0, tzinfo=datetime.timezone.utc),
             'url': 'http://www.twitch.tv/twitchplayspokemon'
         },
         {
