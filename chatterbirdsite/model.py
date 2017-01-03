@@ -15,7 +15,8 @@ class AppModel(object):
             'slug': 'tpp-sun',
             'title': 'TwitchPlaysPokemon Sun',
             'run_start': datetime.datetime(2016, 11, 19, 22, 0, tzinfo=datetime.timezone.utc),
-            'url': 'http://www.twitch.tv/twitchplayspokemon'
+            'url': 'http://www.twitch.tv/twitchplayspokemon',
+            'download_link': 'https://archive.org/details/tpp-sun-screenshots'
         },
         {
             'slug': 'tpp-post-prism',
