@@ -29,7 +29,7 @@ class AppModel(object):
             'title': 'TwitchPlaysPokemon Post Waning Moon',
             'run_start': datetime.datetime(2017, 1, 27, 6, 0, tzinfo=datetime.timezone.utc),
             'url': 'http://www.twitch.tv/twitchplayspokemon',
-            'download_link': 'https://archive.org/details/tpp-post-waning-moon'.
+            'download_link': 'https://archive.org/details/tpp-post-waning-moon',
         },
         {
             'slug': 'tpp-waning-moon',
