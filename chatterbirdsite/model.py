@@ -21,13 +21,15 @@ class AppModel(object):
             'slug': 'tpp-ani-2017',
             'title': 'TwitchPlaysPokemon 2017 Anniversary',
             'run_start': datetime.datetime(2017, 2, 12, 21, 0, tzinfo=datetime.timezone.utc),
-            'url': 'http://www.twitch.tv/twitchplayspokemon'
+            'url': 'http://www.twitch.tv/twitchplayspokemon',
+            'download_link': 'https://archive.org/details/tpp-ani-2017-chatty-yellow-screenshots',
         },
         {
             'slug': 'tpp-post-waning-moon',
             'title': 'TwitchPlaysPokemon Post Waning Moon',
             'run_start': datetime.datetime(2017, 1, 27, 6, 0, tzinfo=datetime.timezone.utc),
-            'url': 'http://www.twitch.tv/twitchplayspokemon'
+            'url': 'http://www.twitch.tv/twitchplayspokemon',
+            'download_link': 'https://archive.org/details/tpp-post-waning-moon'.
         },
         {
             'slug': 'tpp-waning-moon',
