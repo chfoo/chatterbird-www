@@ -21,7 +21,8 @@ class AppModel(object):
             'slug': 'tpp-post-ani-2017',
             'title': 'TwitchPlaysPokemon Post 2017 Anniversary',
             'run_start': datetime.datetime(2017, 2, 24, 16, 0, tzinfo=datetime.timezone.utc),
-            'url': 'http://www.twitch.tv/twitchplayspokemon'
+            'url': 'http://www.twitch.tv/twitchplayspokemon',
+            'download_link': 'https://archive.org/details/tpp-post-ani-2017-screenshots'
         },
         {
             'slug': 'tpp-ani-2017',
