@@ -6,6 +6,12 @@ import os
 class AppModel(object):
     RUNS = [
         {
+            'slug': 'tpp-rand-white-2',
+            'title': 'TwitchPlaysPokemon Randomized White 2',
+            'run_start': datetime.datetime(2017, 6, 3, 21, 0, tzinfo=datetime.timezone.utc),
+            'url': 'http://www.twitch.tv/twitchplayspokemon'
+        },
+        {
             'slug': 'tpp-post-blazed-glazed',
             'title': 'TwitchPlaysPokemon Post Blazed Glazed',
             'run_start': datetime.datetime(2017, 4, 8, 16, 0, tzinfo=datetime.timezone.utc),
