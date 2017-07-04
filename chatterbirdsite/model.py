@@ -21,13 +21,15 @@ class AppModel(object):
             'slug': 'tpp-post-blazed-glazed',
             'title': 'TwitchPlaysPokemon Post Blazed Glazed',
             'run_start': datetime.datetime(2017, 4, 8, 16, 0, tzinfo=datetime.timezone.utc),
-            'url': 'http://www.twitch.tv/twitchplayspokemon'
+            'url': 'http://www.twitch.tv/twitchplayspokemon',
+            'download_link': 'https://archive.org/details/tpp-post-blazed-glazed-screenshots'
         },
         {
             'slug': 'tpp-blazed-glazed',
             'title': 'TwitchPlaysPokemon Blazed Glazed',
             'run_start': datetime.datetime(2017, 4, 8, 16, 0, tzinfo=datetime.timezone.utc),
-            'url': 'http://www.twitch.tv/twitchplayspokemon'
+            'url': 'http://www.twitch.tv/twitchplayspokemon',
+            'download_link': 'https://archive.org/details/tpp-blazed-glazed-screenshots'
         },
         {
             'slug': 'tpp-post-ani-2017',
