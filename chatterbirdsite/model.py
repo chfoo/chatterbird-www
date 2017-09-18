@@ -27,7 +27,8 @@ class AppModel(object):
             'slug': 'tpp-rand-white-2',
             'title': 'TwitchPlaysPokemon Randomized White 2',
             'run_start': datetime.datetime(2017, 6, 3, 21, 0, tzinfo=datetime.timezone.utc),
-            'url': 'http://www.twitch.tv/twitchplayspokemon'
+            'url': 'http://www.twitch.tv/twitchplayspokemon',
+            'download_link': 'https://archive.org/details/tpp-rand-white-2-screenshots'
         },
         {
             'slug': 'tpp-post-blazed-glazed',
