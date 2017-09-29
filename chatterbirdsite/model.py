@@ -6,6 +6,12 @@ import os
 class AppModel(object):
     RUNS = [
         {
+            'slug': 'tpp-theta-emerald-ex',
+            'title': 'TwitchPlaysPokemon Theta Emerald EX',
+            'run_start': datetime.datetime(2017, 9, 30, 21, 0, tzinfo=datetime.timezone.utc),
+            'url': 'http://www.twitch.tv/twitchplayspokemon'
+        },
+        {
             'slug': 'tpp-post-pyrite',
             'title': 'TwitchPlaysPokemon Post Pyrite Intermission',
             'run_start': datetime.datetime(2017, 8, 28, 21, 0, tzinfo=datetime.timezone.utc),
@@ -21,7 +27,8 @@ class AppModel(object):
             'slug': 'tpp-post-rand-white-2',
             'title': 'TwitchPlaysPokemon Post Randomized White 2',
             'run_start': datetime.datetime(2017, 6, 21, 19, 0, tzinfo=datetime.timezone.utc),
-            'url': 'http://www.twitch.tv/twitchplayspokemon'
+            'url': 'http://www.twitch.tv/twitchplayspokemon',
+            'download_link': 'https://archive.org/details/tpp-post-rand-white-2-screenshots'
         },
         {
             'slug': 'tpp-rand-white-2',
