@@ -1,6 +1,9 @@
 import datetime
 import glob
+import json
 import os
+
+import re
 
 
 class AppModel(object):
@@ -200,16 +203,39 @@ class AppModel(object):
 
     def get_screenshot_date_listing(self, slug):
         screenshots_path = os.path.join(self.get_screenshots_dir(), slug)
-        listing = sorted(os.listdir(screenshots_path))
+
+        listing = []
+
+        for name in os.listdir(screenshots_path):
+            if re.match(r'\d{4}-\d\d-\d\d$', name):
+                listing.append(name)
+            elif re.match(r'\d{4}-\d\d-\d\d\.txt$', name):
+                listing.append(name[:10])
+
+        listing = sorted(frozenset(listing))
 
         return listing
 
     def get_screenshot_filename_listing(self, slug, date_str):
         screenshots_path = os.path.join(self.get_screenshots_dir(), slug)
         directory_path = os.path.join(screenshots_path, date_str)
-        pattern = directory_path + '/[0-9]*[0-9].jpg'
 
-        return sorted(os.path.basename(path) for path in glob.glob(pattern))
+        pattern = directory_path + '/[0-9]*[0-9].jpg'
+        paths = list(os.path.basename(path) for path in glob.glob(pattern))
+
+        text_file_path = os.path.join(screenshots_path, '{}.txt'.format(date_str))
+        if os.path.exists(text_file_path):
+            with open(text_file_path) as file:
+                for line in file:
+                    line = line.strip()
+
+                    if not line:
+                        continue
+
+                    if 'thumb' not in line:
+                        paths.append(line)
+
+        return sorted(frozenset(paths))
 
     def get_recent_screenshots(self, slug, count=5):
         image_filenames = []
@@ -233,3 +259,13 @@ class AppModel(object):
         recent = self.get_recent_screenshots(slug, count=1)
 
         return not recent and self.RUN_MAP[slug].get('download_link')
+
+    def get_object_url_prefix(self, slug):
+        screenshots_path = os.path.join(self.get_screenshots_dir(), slug)
+        json_path = os.path.join(screenshots_path, 'meta.json')
+
+        if os.path.exists(json_path):
+            with open(json_path) as file:
+                doc = json.load(file)
+                return doc.get("object_url_prefix")
+

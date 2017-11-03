@@ -36,9 +36,17 @@ class ScreenshotImageHandler(BaseStaticHandler, ScreenshotUnavailableMixin):
         return path
 
     def write_error(self, status_code, **kwargs):
-        dummy, slug, dummy2 = self.request.path.strip('/').split('/', 2)
+        dummy, slug, dummy2, filename = self.request.path.strip('/').split('/', 3)
 
-        if status_code == 404 and self.application.model.is_screenshots_unavailable(slug):
+        object_url_prefix = self.application.model.get_object_url_prefix(slug)
+
+        if status_code == 404 and object_url_prefix:
+            date_str = filename[:10]
+            new_url = '{}{}/{}/{}'.format(object_url_prefix, slug, date_str, filename)
+            self.redirect(new_url, status=307)
+            return
+
+        elif status_code == 404 and self.application.model.is_screenshots_unavailable(slug):
             self.render_unavailable(slug)
             return
         else:
