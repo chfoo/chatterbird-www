@@ -9,6 +9,12 @@ import re
 class AppModel(object):
     RUNS = [
         {
+            'slug': 'tpp-bronze',
+            'title': 'TwitchPlaysPokemon Bronze',
+            'run_start': datetime.datetime(2018, 6, 9, 21, 00, tzinfo=datetime.timezone.utc),
+            'url': 'http://www.twitch.tv/twitchplayspokemon'
+        },
+        {
             'slug': 'tpp-post-storm-silver',
             'title': 'TwitchPlaysPokemon Post Storm Silver Intermission',
             'run_start': datetime.datetime(2018, 5, 4, 0, 00, tzinfo=datetime.timezone.utc),
@@ -304,4 +310,3 @@ class AppModel(object):
             with open(json_path) as file:
                 doc = json.load(file)
                 return doc.get("object_url_prefix")
-
