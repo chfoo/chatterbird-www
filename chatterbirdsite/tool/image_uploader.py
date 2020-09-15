@@ -45,7 +45,7 @@ def process_files(args):
 
     pattern = '*/????-??-??/*.jpg'
 
-    for name in glob.glob(pattern):
+    for name in sorted(glob.glob(pattern)):
         destination = f's3://meme/chatterbird/{name}'
         _logger.info('upload %s to %s', name, destination)
         upload_args = [
@@ -67,8 +67,9 @@ def process_files(args):
                 with open(placeholder_filename, "wb") as file:
                     pass
 
-                backup_filename = f'{name}.bak'
-                os.rename(name, backup_filename)
+        if not args.dry_run:
+            backup_filename = f'{name}.bak'
+            os.rename(name, backup_filename)
 
 
 if __name__ == "__main__":
