@@ -7,7 +7,7 @@ This project is the application code for the Chatter Bird Website located at htt
 Quick Start
 -----------
 
-1. Install Python 3.3+
+1. Install Python 3.5+
 2. Install required packages: `pip3 install tornado --user`
 3. Edit the configuration file as needed.
 4. Run: `python3 -m chatterbirdsite the_config.json`

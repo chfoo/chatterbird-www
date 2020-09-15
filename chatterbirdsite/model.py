@@ -439,6 +439,11 @@ class AppModel(object):
                     if 'thumb' not in line:
                         paths.append(line)
 
+        placeholder_pattern = directory_path + '/[0-9]*[0-9].placeholder'
+        paths.extend(
+            os.path.basename(path).replace('.placeholder', '.jpg')
+            for path in glob.glob(placeholder_pattern))
+
         return sorted(frozenset(paths))
 
     def get_recent_screenshots(self, slug, count=5):
