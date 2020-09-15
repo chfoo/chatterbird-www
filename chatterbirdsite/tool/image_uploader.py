@@ -6,6 +6,9 @@ import os
 import re
 import subprocess
 import sys
+import concurrent.futures
+from concurrent.futures import ThreadPoolExecutor
+import signal
 
 _logger = logging.getLogger()
 
@@ -44,8 +47,17 @@ def process_files(args):
     os.chdir(args.screenshots_dir)
 
     pattern = '*/????-??-??/*.jpg'
+    running = True
 
-    for name in sorted(glob.glob(pattern)):
+    def handler(signum, frame):
+        _logger.info('exit requested')
+        nonlocal running
+        running = False
+
+    def upload(name):
+        if not running:
+            raise OSError("task stopping")
+
         destination = f's3://meme/chatterbird/{name}'
         _logger.info('upload %s to %s', name, destination)
         upload_args = [
@@ -71,6 +83,17 @@ def process_files(args):
             backup_filename = f'{name}.bak'
             os.rename(name, backup_filename)
 
+    old_int_handler = signal.signal(signal.SIGINT, handler)
+    old_term_handler = signal.signal(signal.SIGTERM, handler)
+
+    with ThreadPoolExecutor(max_workers=4) as executor:
+        futures = [executor.submit(upload, name) for name in sorted(glob.glob(pattern))]
+
+        for future in concurrent.futures.as_completed(futures):
+            future.result()
+
+    signal.signal(signal.SIGINT, old_int_handler)
+    signal.signal(signal.SIGTERM, old_term_handler)
 
 if __name__ == "__main__":
     main()
