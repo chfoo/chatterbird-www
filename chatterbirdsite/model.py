@@ -9,6 +9,12 @@ import re
 class AppModel(object):
     RUNS = [
         {
+            'slug': 'tpp-post-renegade-platinum',
+            'title': 'TwitchPlaysPokemon Post Pokemon Renegade Platinum Intermission',
+            'run_start': datetime.datetime(2021, 4, 21, 21, 0, tzinfo=datetime.timezone.utc),
+            'url': 'http://www.twitch.tv/twitchplayspokemon'
+        },
+        {
             'slug': 'tpp-renegade-platinum',
             'title': 'TwitchPlaysPokemon Pokemon Renegade Platinum',
             'run_start': datetime.datetime(2021, 4, 10, 21, 0, tzinfo=datetime.timezone.utc),
