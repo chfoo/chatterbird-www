@@ -9,6 +9,24 @@ import re
 class AppModel(object):
     RUNS = [
         {
+            'slug': 'tps-rgb-race',
+            'title': 'TwitchPlaysSpeedruns - The War Of The TwitchPlays',
+            'run_start': datetime.datetime(2021, 5, 8, 21, 0, tzinfo=datetime.timezone.utc),
+            'url': 'https://www.twitch.tv/twitchplaysspeedruns'
+        },
+        {
+            'slug': 'tpp-rgb-race',
+            'title': 'TwitchPlaysPokemon - Red Green Blue Race',
+            'run_start': datetime.datetime(2021, 5, 8, 21, 0, tzinfo=datetime.timezone.utc),
+            'url': 'https://www.twitch.tv/twitchplayspokemon'
+        },
+        {
+            'slug': 'tppm-rgb-race',
+            'title': 'TwitchPlaysPaperMario - Pokemon R/G/B Race',
+            'run_start': datetime.datetime(2021, 5, 8, 21, 0, tzinfo=datetime.timezone.utc),
+            'url': 'https://www.twitch.tv/twitchplayspapermario'
+        },
+        {
             'slug': 'tpp-post-renegade-platinum',
             'title': 'TwitchPlaysPokemon Post Pokemon Renegade Platinum Intermission',
             'run_start': datetime.datetime(2021, 4, 21, 21, 0, tzinfo=datetime.timezone.utc),
