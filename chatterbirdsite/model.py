@@ -9,6 +9,12 @@ import re
 class AppModel(object):
     RUNS = [
         {
+            'slug': 'tpp-post-rgb-race',
+            'title': 'TwitchPlaysPokemon - Post RGB Race Intermission',
+            'run_start': datetime.datetime(2021, 5, 13, 21, 0, tzinfo=datetime.timezone.utc),
+            'url': 'https://www.twitch.tv/twitchplayspokemon'
+        },
+        {
             'slug': 'tps-rgb-race',
             'title': 'TwitchPlaysSpeedruns - The War Of The TwitchPlays',
             'run_start': datetime.datetime(2021, 5, 8, 21, 0, tzinfo=datetime.timezone.utc),
