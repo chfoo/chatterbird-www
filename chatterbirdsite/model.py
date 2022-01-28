@@ -9,6 +9,12 @@ import re
 class AppModel(object):
     RUNS = [
         {
+            'slug': 'tpp-legends-arceus',
+            'title': 'TwitchPlaysPokemon - Legends: Arceus',
+            'run_start': datetime.datetime(2022, 1, 29, 21, 0, tzinfo=datetime.timezone.utc),
+            'url': 'https://www.twitch.tv/twitchplayspokemon'
+        },
+        {
             'slug': 'tpp-brilliant-diamond',
             'title': 'TwitchPlaysPokemon - Brilliant Diamond',
             'run_start': datetime.datetime(2021, 11, 20, 21, 0, tzinfo=datetime.timezone.utc),
